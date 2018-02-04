@@ -4,7 +4,7 @@ const standardOptions = require('./package.json').standard
 
 const environment = process.env.NODE_ENV || 'development'
 const $ = {}
-const modulePattern = /(node_modules|bower_components)/
+const modulePattern = /(node_modules|bower_components|AgoraRTC|agoraApp)/
 
 // TODO: This causes some issues when combined with app testing.
 // $.devtool = environment === 'development' ? 'eval-source-map' : false
@@ -20,7 +20,11 @@ $.output = {
   path: path.resolve(__dirname, 'build')
 }
 
-$.plugins = []
+$.plugins = [
+  // new webpack.ProvidePlugin({
+  //   'AgoraRTC': '../AgoraRTC/AgoraRTCSDK-2.1.0'
+  // })
+]
 
 if (environment === 'production') {
   $.plugins.push(new webpack.LoaderOptionsPlugin({minimize: false, debug: false}))
