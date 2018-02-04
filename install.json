@@ -3,18 +3,18 @@
     "body": [
       {
         "type": "style",
-        "src": "./source/app.css"
+        "src": "./build/app.css"
       },
       {
         "type": "script",
-        "src": "./source/app.js"
+        "src": "./build/app.js"
       }
     ]
   },
   "preview": {
     "handlers": [
       {
-        "options": ["*"],
+        "options": ["_default"],
         "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
       }
     ]
