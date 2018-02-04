@@ -27,14 +27,24 @@
         "title": "Shape",
         "properties": {
           "width": {
-            "title": "How large should the button appear?",
+            "title": "Width",
             "format": "slider",
             "order": 1,
             "type": "number",
-            "default": 50,
+            "default": 600,
             "step": 1,
-            "minimum": 40,
-            "maximum": 100
+            "minimum": 200,
+            "maximum": 1000
+          },
+          "height": {
+            "title": "Height",
+            "format": "slider",
+            "order": 1,
+            "type": "number",
+            "default": 450,
+            "step": 1,
+            "minimum": 200,
+            "maximum": 1000
           }
         }
       },
@@ -57,7 +67,6 @@
         "format": "radios",
         "default": "bottom-right"
       }
-
     }
   }
 }

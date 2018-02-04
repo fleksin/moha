@@ -13,7 +13,33 @@
 
     // Set the app attribute to your app's dash-delimited alias.
     element.setAttribute('app', 'example')
-    element.innerHTML = '<modal><iframe src="https://agora-demono.herokuapp.com/"></iframe></modal>'
+    // element.innerHTML = '<iframe src="https://agora-demono.herokuapp.com/" width="' + options.shape.width + '" height="' + options.shape.height + '" ></iframe>'
+    let iframe = document.createElement('iframe')
+    iframe.src = 'https://agora-demono.herokuapp.com/'
+    iframe.width = options.shape.width
+    iframe.height = options.shape.height
+    if (options.position === 'top-left') {
+      iframe.style.left = '0'
+      iframe.style.right = ''
+      iframe.style.top = '40'
+      iframe.style.bottom = ''
+    } else if (options.position === 'top-right') {
+      iframe.style.left = ''
+      iframe.style.right = '0'
+      iframe.style.top = '40'
+      iframe.style.bottom = ''
+    } else if (options.position === 'bottom-left') {
+      iframe.style.left = '0'
+      iframe.style.right = ''
+      iframe.style.top = ''
+      iframe.style.bottom = '0'
+    } else if (options.position === 'bottom-right') {
+      iframe.style.left = ''
+      iframe.style.right = '0'
+      iframe.style.top = ''
+      iframe.style.bottom = '0'
+    }
+    element.appendChild(iframe)
   }
 
   // INSTALL_SCOPE is an object that is used to handle option changes without refreshing the page.
