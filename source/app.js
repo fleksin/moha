@@ -15,7 +15,7 @@
     element.setAttribute('app', 'example')
     // element.innerHTML = '<iframe src="https://agora-demono.herokuapp.com/" width="' + options.shape.width + '" height="' + options.shape.height + '" ></iframe>'
     let iframe = document.createElement('iframe')
-    iframe.src = 'https://agora-demono.herokuapp.com/'
+    iframe.src = 'https://moha-demo.herokuapp.com/'
     iframe.width = options.shape.width
     iframe.height = options.shape.height
     if (options.position === 'top-left') {
