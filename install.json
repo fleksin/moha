@@ -3,43 +3,61 @@
     "body": [
       {
         "type": "style",
-        "src": "./build/app.css"
+        "src": "./source/app.css"
       },
       {
         "type": "script",
-        "src": "./build/app.js"
+        "src": "./source/app.js"
       }
     ]
   },
   "preview": {
     "handlers": [
       {
-        "options": ["_default"],
+        "options": ["*"],
         "execute": "INSTALL_SCOPE.setOptions(INSTALL_OPTIONS)"
       }
     ]
   },
   "options": {
     "properties": {
-      "location": {
-        "title": "Message Location",
-        "description": "Where should the message appear?",
-        "order": 0,
+      "shape": {
         "type": "object",
-        "format": "element",
-        "default": {
-          "selector": "body",
-          "method": "prepend"
+        "order": 1,
+        "title": "Shape",
+        "properties": {
+          "width": {
+            "title": "How large should the button appear?",
+            "format": "slider",
+            "order": 1,
+            "type": "number",
+            "default": 50,
+            "step": 1,
+            "minimum": 40,
+            "maximum": 100
+          }
         }
       },
-      "message": {
-        "title": "Message",
-        "description": "A short example message.",
+      "position": {
+        "order": 2,
+        "title": "Position",
         "type": "string",
-        "format": "richtext",
-        "order": 1,
-        "default": "<p>Welcome to Cloudflare Apps! This is our example app that utilizes Webpack.</p><p>Download this app every time you want to make a new project with the latest JavaScript and CSS features.</p>"
+        "enum": [
+          "top-left",
+          "top-right",
+          "bottom-left",
+          "bottom-right"
+        ],
+        "enumNames": {
+          "top-left": "Top left corner",
+          "top-right": "Top right corner",
+          "bottom-left": "Bottom left corner",
+          "bottom-right": "Bottom right corner"
+        },
+        "format": "radios",
+        "default": "bottom-right"
       }
+
     }
   }
 }
